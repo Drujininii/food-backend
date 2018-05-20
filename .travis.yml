@@ -11,5 +11,5 @@ script:
 - scp -r ./app root@195.133.1.169:/home/food-backend
 before_install:
 - openssl aes-256-cbc -K $encrypted_26bd407dd73f_key -iv $encrypted_26bd407dd73f_iv
-  -in android-remote-server.enc -out ~\/.ssh/android-remote-server -d
+  -in android-remote-server.enc -out $HOME/.ssh/android-remote-server -d
 - npm run start
