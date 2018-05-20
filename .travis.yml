@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 10
+env:
+- NODE_ENV=production
+script:
+- eval "$(ssh-agent -s)"
+- ssh-keyscan -H 195.133.1.169/ >> ~/.ssh/known_hosts
+- chmod 600 $HOME/.ssh/food-backend
+- ssh-add $HOME/.ssh/food-backend
+- npm run start
+- scp -r ./public root@195.133.147.209:/home/food-backend
