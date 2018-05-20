@@ -5,7 +5,7 @@ env:
 - NODE_ENV=production
 script:
 - eval "$(ssh-agent -s)"
-- ssh-keyscan -H 195.133.1.169/ >> ~/.ssh/known_hosts
+- ssh-keyscan -H 195.133.1.169/ >> $HOME/.ssh/known_hosts
 - chmod 600 $HOME/.ssh/android-remote-server
 - ssh-add $HOME/.ssh/android-remote-server
 - scp -r ./ root@195.133.1.169:/home/food-backend
