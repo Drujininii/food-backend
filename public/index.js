@@ -2,6 +2,7 @@ let button = document.getElementById('submitButton');
 let form = document.getElementById('productForm');
 let answerField = document.getElementById('answerField');
 
+
 button.addEventListener('click', (event) => {
     event.preventDefault();
     console.log('try to submit');
