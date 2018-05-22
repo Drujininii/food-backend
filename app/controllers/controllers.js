@@ -51,7 +51,7 @@ class Controller {
 
 
         console.log('request json', requestJson);
-        let response = await models.getRecipe(requestJson.products)
+        let response = await models.getRecipe(requestJson.products.replace(/[\[\]]/g, '').split(', '))
         response = this.convertProductsToArray(response);
         
         const responseJson = JSON.stringify(response);
