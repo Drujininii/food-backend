@@ -16,7 +16,7 @@ button.addEventListener('click', (event) => {
         console.log('products', productsArray);
     })
     const body = {
-        products: productsArray,
+        products: `${productsArray}`,
     }
     fetchPost('getRecipe', body)
     .then((resp) => {

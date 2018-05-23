@@ -30,7 +30,6 @@ class Controller {
     async getRecipe(req) {
         console.log('get recipe');
         const requestJson = req.body;
-        console.log('android request body', requestJson);
 
         // const recipe = [{
         //     recipe_name: 'student pack',
@@ -51,9 +50,9 @@ class Controller {
 
 
         console.log('request json', requestJson);
-        let response = await models.getRecipe(requestJson.products.replace(/[\[\]]/g, '').split(', '))
+        let response = await models.getRecipe(requestJson.products.replace(/[\[\] ]/g, '').split(','))
         response = this.convertProductsToArray(response);
-        
+        console.log('response', response);
         const responseJson = JSON.stringify(response);
         return responseJson;
         // return recipe;
