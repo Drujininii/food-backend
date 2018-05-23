@@ -7,6 +7,7 @@ if (process.env.NODE_ENV === 'develop') {
     db = pgp("postgres://igor:qwerty@localhost:5432/android_app");
 }
 
+
 class Models {
     constructor() {
     }
